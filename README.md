@@ -1,0 +1,1 @@
+### RANDOM DECISION GENERATOR MADE with REACT and styled with SCSS

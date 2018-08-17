@@ -1,0 +1,52 @@
+{
+  "name": "indecision",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "live-server public/",
+    "build": "webpack",
+    "dev-server": "webpack-dev-server",
+    "build-babel": "babel src/app.js --out-file=public/scripts/app.js --presets=env,react --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kevinjchi/react-projects.git"
+  },
+  "keywords": [
+    "indecision"
+  ],
+  "author": "Kevin Jeu Chiem",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kevinjchi/react-projects/issues"
+  },
+  "homepage": "https://github.com/kevinjchi/react-projects#readme",
+  "dependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.1",
+    "babel-preset-env": "^1.5.2",
+    "babel-preset-react": "^6.24.1",
+    "devtool": "^2.3.1",
+    "live-server": "^1.2.0",
+    "node-sass": "^4.9.3",
+    "normalize.css": "^8.0.0",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-modal": "^3.5.1",
+    "sass-loader": "^7.1.0",
+    "validator": "^10.5.0",
+    "webpack-dev": "^1.1.1",
+    "webpack-dev-server": "^3.1.5"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "css-loader": "^1.0.0",
+    "nodemon": "^1.18.3",
+    "style-loader": "^0.22.1",
+    "webpack": "^4.16.5",
+    "webpack-cli": "^3.1.0"
+  }
+}
