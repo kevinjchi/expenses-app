@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "build": "webpack",
     "dev-server": "webpack-dev-server",
     "build-babel": "babel src/app.js --out-file=public/scripts/app.js --presets=env,react --watch"
@@ -35,10 +35,14 @@
     "react-dom": "15.6.1",
     "react-modal": "2.2.2",
     "react-router-dom": "^4.3.1",
+    "redux": "^4.0.0",
     "sass-loader": "6.0.6",
     "style-loader": "0.18.2",
     "validator": "8.0.0",
     "webpack": "3.1.0",
     "webpack-dev-server": "2.5.1"
+  },
+  "devDependencies": {
+    "jest": "^23.5.0"
   }
 }
