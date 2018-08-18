@@ -5,7 +5,7 @@ console.log(path.join(__dirname, 'public'));
 
 // configuration details for webpack file
 module.exports = {
-    entry: './src/app.js',
+    entry: './src/playground/higher-order-components.js',
     output: {
         path: path.join(__dirname, 'public'),
         filename: 'bundle.js'
