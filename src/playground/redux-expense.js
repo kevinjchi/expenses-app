@@ -22,24 +22,75 @@ const addExpense = (
     }
 });
 // REMOVE_EXPENSE
-// EDIT_EXPENSE
-// SET_TEXT_FILTER
-// SORT_BY_DATE
-// SORT_BY_AMOUNT
-// SET_START_DATE
-// SET_END_DATE
+const removeExpense = ({ id } = {}) => ({
+    type: 'REMOVE_EXPENSE',
+    id    
+});
 
+// EDIT_EXPENSE
+const editExpense = (id, updates) => ({
+    type: 'EDIT_EXPENSE',
+    id,
+    updates
+});
+
+// SET_TEXT_FILTER
+const setTextFilter = (text = '') => ({
+    type: 'SET_TEXT_FILTER',
+    text
+});
+// SORT_BY_AMOUNT
+const sortByDate = () => ({
+    type: 'SORT_BY_AMOUNT',
+    sortBy
+});
+
+// SORT_BY_DATE
+const sortByAmount = () => ({
+    type: 'SORT_BY_DATE',
+    sortBy
+});
+// SET_START_DATE
+const setStartDate = (startDate) => ({
+    type: 'SET_START_DATE',
+    startDate
+});
+
+// SET_END_DATE
+const setEndDate = (endDate) => ({
+    type: 'SET_END_DATE',
+    endDate
+})
 // Expenses array
 
 const expensesReducerDefaultState = []
 
 const expensesReducer = (state = expensesReducerDefaultState, action) => {
     switch (action.type) {
+        case 'ADD_EXPENSE':
+            return state.concat(action.expense)  // can use spread operator [...state, action.expense]
+        case 'REMOVE_EXPENSE':
+            return state.filter(({ id }) => {
+                return id !== action.id
+            });
+        case 'EDIT_EXPENSE':
+            return state.map((expense) => {
+                if (expense.id === action.id) {
+                    return {
+                        // hold the current
+                        ...expense,
+                        // save new passed in
+                        ...action.updates
+                    };
+                } else {
+                    return expense;
+                };
+            })
         default:
-        return state;
+            return state;
     }
+    
 };
-
 const filtersReducerDefaultState = {
     text: '',
     sortBy: 'date', // date or amount
@@ -51,12 +102,37 @@ const filtersReducerDefaultState = {
 // text => '', sortBy => 'date', startDate => undefined, endDate => undefined
 const filtersReducer = (state = filtersReducerDefaultState, action) => {
     switch(action.type) {
+        case 'SET_TEXT_FILTER':
+            return {
+                ...state,
+                text: action.text
+            };
+        case 'SORT_BY_AMOUNT':
+            return {
+                ...state,
+                sortBy: 'amount'
+            };
+        case 'SORT_BY_DATE':
+            return {
+                ...state,
+                sortBy: 'date'
+            };
+        case 'SET_START_DATE':
+            return {
+                ...state,
+                startDate: action.startDate
+            };
+        case 'SET_START_DATE':
+            return {
+                ...state,
+                endDate: action.endDate
+            }
         default:
         return state;
     }
 };
 
-
+// store creation
 const store = createStore(
     combineReducers({
         expenses: expensesReducer,
@@ -65,7 +141,29 @@ const store = createStore(
 );
 
 // const store = createStore(expensesReducer);
-console.log(store.getState());
+store.subscribe(() => {
+    console.log(store.getState());
+});
+
+const expenseOne = store.dispatch(addExpense({
+    description: 'Rent', amount: 100
+}));
+const expenseTwo = store.dispatch(addExpense({
+    description: 'Cofee', amount: 150
+}));
+
+store.dispatch(removeExpense({ id: expenseOne.expense.id}));
+store.dispatch(editExpense(expenseTwo.expense.id, {amount: 500}));
+store.dispatch(setTextFilter('rent'));
+store.dispatch(setTextFilter(''));
+store.dispatch(setTextFilter(sortByAmount()));
+store.dispatch(setTextFilter(sortByDate()));
+store.dispatch(setTextFilter(setStartDate(125)));
+store.dispatch(setTextFilter(setEndDate(120)));
+store.dispatch(setTextFilter(setEndDate()));
+store.dispatch(setTextFilter(setStartDate()));
+
+
 
 
 const demoState = {
@@ -83,3 +181,14 @@ const demoState = {
         endDate: undefined
     }
 };
+
+const user = {
+    name: 'Jen',
+    age: 24
+};
+
+console.log({
+    ...user,
+    location: 'Philadelphia',
+    age: 22
+});
