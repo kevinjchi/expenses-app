@@ -5,7 +5,7 @@ console.log(path.join(__dirname, 'public'));
 
 // configuration details for webpack file
 module.exports = {
-    entry: './src/playground/destructuring.js',
+    entry: './src/playground/redux-101.js',
     output: {
         path: path.join(__dirname, 'public'),
         filename: 'bundle.js'
