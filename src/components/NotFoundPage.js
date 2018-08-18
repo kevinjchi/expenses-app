@@ -6,3 +6,5 @@ const NotFoundPage = () => (
         <NavLink to="/"> go home </NavLink>
     </div>
 );
+
+export default NotFoundPage;

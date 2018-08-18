@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch, Link , NavLink} from 'react-router-dom';
 import 'normalize.css/normalize.css';
-import './styles/styles.scss';
+import '../styles/styles.scss';
 
 const Header = () => (
 
