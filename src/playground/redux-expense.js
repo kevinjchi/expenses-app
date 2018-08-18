@@ -130,9 +130,19 @@ const filtersReducer = (state = filtersReducerDefaultState, action) => {
     }
 };
 
-const getVisibleExpenses = (expenses, filters) => {
-    return expenses;
-}
+// timestamps (milliseconds)
+// January 1st 1970 (unix epoch)
+
+
+const getVisibleExpenses = (expenses, {text, sortBy, startDate, endDate}) => {
+    return expenses.filter((expense) => {
+        const startDateMatch = typeof startDate !== 'number' || expense.createdAt >= startDate;
+        const endDateMatch = typeof endDate !== 'number' || expense.createdAt <= endDate;
+        const textMatch = expense.description.toLowerCase().includes(text.toLowerCase());
+
+        return startDateMatch && endDateMatch && textMatch;
+    });
+};
 
 // store creation
 const store = createStore(
@@ -151,22 +161,24 @@ store.subscribe(() => {
 });
 
 const expenseOne = store.dispatch(addExpense({
-    description: 'Rent', amount: 100
+    description: 'Rent', amount: 100, createdAt: 1000
 }));
 const expenseTwo = store.dispatch(addExpense({
-    description: 'Cofee', amount: 150
+    description: 'Cofee', amount: 150, createdAt: -1000
 }));
 
-store.dispatch(removeExpense({ id: expenseOne.expense.id}));
-store.dispatch(editExpense(expenseTwo.expense.id, {amount: 500}));
-store.dispatch(setTextFilter('rent'));
-store.dispatch(setTextFilter(''));
-store.dispatch(setTextFilter(sortByAmount()));
-store.dispatch(setTextFilter(sortByDate()));
-store.dispatch(setTextFilter(setStartDate(125)));
-store.dispatch(setTextFilter(setEndDate(120)));
-store.dispatch(setTextFilter(setEndDate()));
-store.dispatch(setTextFilter(setStartDate()));
+// store.dispatch(removeExpense({ id: expenseOne.expense.id}));
+// store.dispatch(editExpense(expenseTwo.expense.id, {amount: 500}));
+// store.dispatch(setTextFilter('rent'));
+// store.dispatch(setTextFilter(''));
+// store.dispatch(setTextFilter(sortByAmount()));
+// store.dispatch(setTextFilter(sortByDate()));
+// store.dispatch(setTextFilter(setStartDate(999)));
+// store.dispatch(setTextFilter(setEndDate(120)));
+// store.dispatch(setTextFilter(setEndDate()));
+// store.dispatch(setTextFilter(setStartDate()));
+store.dispatch(setStartDate(125));
+store.dispatch(setEndDate(125));
 
 
 
