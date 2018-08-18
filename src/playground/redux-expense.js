@@ -40,15 +40,13 @@ const setTextFilter = (text = '') => ({
     text
 });
 // SORT_BY_AMOUNT
-const sortByDate = () => ({
+const sortByAmount = () => ({
     type: 'SORT_BY_AMOUNT',
-    sortBy
 });
 
 // SORT_BY_DATE
-const sortByAmount = () => ({
+const sortByDate = () => ({
     type: 'SORT_BY_DATE',
-    sortBy
 });
 // SET_START_DATE
 const setStartDate = (startDate) => ({
@@ -132,6 +130,10 @@ const filtersReducer = (state = filtersReducerDefaultState, action) => {
     }
 };
 
+const getVisibleExpenses = (expenses, filters) => {
+    return expenses;
+}
+
 // store creation
 const store = createStore(
     combineReducers({
@@ -142,7 +144,10 @@ const store = createStore(
 
 // const store = createStore(expensesReducer);
 store.subscribe(() => {
-    console.log(store.getState());
+    const state = store.getState();
+    const visibleExpenses = getVisibleExpenses(state.expenses, state.filters);
+    console.log(visibleExpenses);
+
 });
 
 const expenseOne = store.dispatch(addExpense({
