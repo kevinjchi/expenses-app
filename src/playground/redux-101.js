@@ -36,7 +36,7 @@ const resetCount = () => ({
 
 
 // set state to default state object
-const store = createStore((state = {count: 0}, action) => {
+const countReducer = createStore((state = {count: 0}, action) => {
     switch (action.type) {
         case 'INCREMENT':
             return {
