@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { setTextFilter, sortByAmount, sortByDate } from '../actions/filters';
 
+// constrolled input
 const ExpenseListFilters = (props) => (
     <div>
         <input 
