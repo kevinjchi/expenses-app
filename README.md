@@ -1,1 +1,3 @@
-### RANDOM DECISION GENERATOR MADE with REACT and styled with SCSS
+### Expense-app
+
+An expense app made using the framework React, Redux.

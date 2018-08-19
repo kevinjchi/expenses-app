@@ -18,7 +18,6 @@ class ExpenseForm extends Component {
             calendarFocused: false,
             error: ''
         };
-
     }
     onDescriptionChange = (e) => {
         const description = e.target.value;
