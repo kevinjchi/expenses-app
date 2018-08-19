@@ -1,6 +1,6 @@
 import { addExpense, editExpense, removeExpense} from '../actions/expenses';
 
-// To equal to compare two objects or arrays
+// toEqual to compare two objects or arrays
 
 test('should setup remove expense action object', () => {
     const action = removeExpense({id: '123abc'});
