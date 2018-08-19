@@ -1,5 +1,5 @@
-import { addExpense, editExpense, removeExpense} from '../actions/expenses';
-
+import { addExpense, editExpense, removeExpense} from '../../actions/expenses';
+/** TESTING EXPENSES ACTIONS */
 // toEqual to compare two objects or arrays
 
 test('should setup remove expense action object', () => {
