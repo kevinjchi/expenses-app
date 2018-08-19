@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { removeExpense } from '../actions/expenses';
 
 // stateless functional component rendering individual expense item
@@ -7,9 +8,11 @@ import { removeExpense } from '../actions/expenses';
 // can destructure ({description, amount, createdAt}) or use  props.expenses....
 const ExpenseListItem = ({dispatch, id, description, amount, createdAt}) => (
     <div>
-        <h1>
+    <Link to={`/edit/${id}`}>
+        <h3>
         {description}
-        </h1>
+        </h3>
+    </Link>
         <p>- {createdAt} -{amount}</p>
         <button onClick={(e) => {
             dispatch(removeExpense({ id }));
