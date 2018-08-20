@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --config=jest.config.json",
     "build": "webpack",
     "dev-server": "webpack-dev-server",
     "build-babel": "babel src/app.js --out-file=public/scripts/app.js --presets=env,react --watch"
@@ -30,6 +30,9 @@
     "babel-preset-env": "1.5.2",
     "babel-preset-react": "6.24.1",
     "css-loader": "0.28.4",
+    "enzyme": "^3.0.0",
+    "enzyme-adapter-react-16": "^1.0.0",
+    "enzyme-to-json": "^3.0.1",
     "moment": "^2.22.2",
     "node-sass": "4.5.3",
     "normalize.css": "7.0.0",
@@ -40,6 +43,7 @@
     "react-modal": "2.2.2",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
+    "react-test-renderer": "^16.0.0",
     "redux": "^4.0.0",
     "sass-loader": "6.0.6",
     "style-loader": "0.18.2",
