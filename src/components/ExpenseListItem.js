@@ -7,8 +7,9 @@ import numeral from 'numeral';
 // stateless functional component rendering individual expense item
 
 // can destructure ({description, amount, createdAt}) or use  props.expenses....
-numeral.locale('no');
+
 const ExpenseListItem = ({dispatch, id, description, amount, createdAt}) => (
+    
     <div>
     <Link to={`/edit/${id}`}>
         <h3>
@@ -16,7 +17,7 @@ const ExpenseListItem = ({dispatch, id, description, amount, createdAt}) => (
         </h3>
     </Link>
         <p>
-        {numeral(amount / 100).format('$0,0.00')} 
+        {numeral(amount / 100).format('0,0.00')} NOK
         - 
         {moment(createdAt).format('MMMM Do, YYYY')}
         </p>

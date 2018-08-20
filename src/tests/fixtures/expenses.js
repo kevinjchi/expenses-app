@@ -22,4 +22,5 @@ const expenses = [{
     createdAt: moment(0).add(4, 'days').valueOf()
 }];
 
+// total 194195
 export default expenses;
