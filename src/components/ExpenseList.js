@@ -4,24 +4,23 @@ import ExpenseListItem from './ExpenseListItem';
 import selectExpenses from '../selectors/expenses';
 
 export const ExpenseList = (props) => (
-    <div>
-        {
-            props.expenses.length === 0 ? (<p>Noe expenses </p>
-            ) : (
-                props.expenses.map( (expense) => {
-                    return <ExpenseListItem key={expense.id} {...expense}/>
-                })
-            )
-        }
-    </div>
+  <div>
+    {
+      props.expenses.length === 0 ? (
+        <p>No expenses</p>
+      ) : (
+          props.expenses.map((expense) => {
+            return <ExpenseListItem key={expense.id} {...expense} />;
+          })
+        )
+    }
+  </div>
 );
 
-const mapStateToProps =  (state) => {
-    return {
-        expenses: selectExpenses(state.expenses, state.filters)
-    }
+const mapStateToProps = (state) => {
+  return {
+    expenses: selectExpenses(state.expenses, state.filters)
+  };
 };
-// connect(what to connect)
-const ConnectedExpenseList = connect(mapStateToProps)(ExpenseList);
 
-// export default ConnectedExpenseList;
+export default connect(mapStateToProps)(ExpenseList);
