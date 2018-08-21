@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Switch, Link , NavLink} from 'react-router-dom';
 
 const Header = () => (
 
-    // No full page refresh
+    // No full page refresh, do javascript rendering instead
     <header>
         <h1>expenses app </h1>
         <NavLink to="/" activeClassName="is-active" exact={true}> go home </NavLink>
