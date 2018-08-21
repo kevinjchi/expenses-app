@@ -12,9 +12,9 @@ import 'react-dates/lib/css/_datepicker.css';
 import './firebase/firebase';
 
 const store = configureStore();
-store.dispatch(addExpense({description: 'water bill', amount: 500}));
-store.dispatch(addExpense({description: 'gas bill', createAt: 1000}));
-store.dispatch(addExpense({description: 'gas bill', amount: 109500}));
+// store.dispatch(addExpense({description: 'water bill', amount: 500}));
+// store.dispatch(addExpense({description: 'gas bill', createAt: 1000}));
+// store.dispatch(addExpense({description: 'gas bill', amount: 109500}));
 
 // store.dispatch(setTextFilter('water'));
 
