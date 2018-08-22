@@ -1,8 +1,8 @@
-### Expense-app
+# Expense-app
 
 An expense app made using the framework React, Redux.
 
-## TODO:
+### TODO:
 - [x] Outline
 - [x] Setup folder structure
 - [x] Components setup
