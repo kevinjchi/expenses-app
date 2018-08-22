@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { removeExpense } from '../actions/expenses';
+import { startRemoveExpense } from '../actions/expenses';
 import moment from 'moment';
 import numeral from 'numeral';
 // stateless functional component rendering individual expense item
@@ -22,7 +22,7 @@ const ExpenseListItem = ({dispatch, id, description, amount, createdAt}) => (
         {moment(createdAt).format('MMMM Do, YYYY')}
         </p>
         <button onClick={(e) => {
-            dispatch(removeExpense({ id }));
+            dispatch(startRemoveExpense({ id }));
         }}>Remove item </button>
     </div>
 );
