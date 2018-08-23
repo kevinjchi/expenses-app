@@ -1,5 +1,9 @@
 .header {
-    background: $dark-blue;
+    background: $off-black;
+    h1 {
+        color: $off-white;
+        font-family: "Lucida Sans Unicode";
+    }
 }
 
 .header__content {
