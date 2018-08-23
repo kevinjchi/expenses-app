@@ -45,7 +45,7 @@ const countReducer = createStore((state = {count: 0}, action) => {
         case 'DECREMENT':
             // const decrementBy = typeof action.decrementBy == 'number' ? acrion.decrementBy : 1;
             return {
-                count: state.count - action.decrementBy;
+                count: state.count - action.decrementBy
             };
         case 'RESET':
             return {
