@@ -5,7 +5,7 @@ import database from '../firebase/firebase';
 // redux-thunk helps dispatching functions
 // component calls action generator
 // action generator returns function
-// coponent dispatched function () 
+// component dispatched function () 
 // function runs (has the ability to dispatch other actions and do what it wants)
 
 //  ADD_EXPENSE
@@ -13,6 +13,7 @@ export const addExpense = (expense) => ({
     type: 'ADD_EXPENSE',
     expense
 });
+
 // promise chaining
 export const startAddExpense = (expenseData = {}) => {
     return (dispatch) => {
