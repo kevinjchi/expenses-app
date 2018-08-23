@@ -22,7 +22,7 @@ class ExpenseListFilters extends React.Component {
                         <input 
                             type="text" 
                             className="text-input"
-                            placeholder="Search name"
+                            placeholder="Søk og Filtrer"
                             value={this.props.filters.text} 
                             onChange={(e) => {
                                 this.props.dispatch(setTextFilter(e.target.value));
@@ -39,8 +39,8 @@ class ExpenseListFilters extends React.Component {
                                     this.props.dispatch(sortByAmount());
                                 }
                             }}>
-                            <option value="date">Date</option>
-                            <option value="amount">Amount</option>
+                            <option value="date">Dato</option>
+                            <option value="amount">Sum</option>
                         </select>
                     </div>
                     <div className="input-group__item">

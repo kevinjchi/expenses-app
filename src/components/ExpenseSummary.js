@@ -7,14 +7,14 @@ import selectExpenses from '../selectors/expenses';
 
 
 export const ExpenseSummary = ({ expenseCount, expenseTotal}) => {
-    const expenseWord = expenseCount === 1 ? 'expense' : 'expenses';
+    const expenseWord = expenseCount === 1 ? 'utgift' : 'utgifter';
     const formattedExpensesTotal = numeral(expenseTotal / 100).format('0,0.00');
     return (
         <div className="page-header">
             <div className="content-container">
-                <h1 className="page-header__title">Viewing <span>{expenseCount}</span> {expenseWord} totalt <span>{formattedExpensesTotal}</span></h1>
+                <h1 className="page-header__title"> {expenseWord} <span>{expenseCount}</span>  => kostnad på {expenseWord} <span>{formattedExpensesTotal} ,- </span></h1>
                 <div className="page-header__actions">
-                <Link className="button" to="/create"> Add expense </Link>
+                <Link className="button" to="/create"> Legg til </Link>
                 </div>
             </div>
         </div>

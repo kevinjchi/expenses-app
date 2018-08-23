@@ -80,13 +80,13 @@ class ExpenseForm extends Component {
                 />
                 <textarea
                     className="textarea" 
-                    placeholder="Add a note"
+                    placeholder="Add note"
                     value={this.state.note}
                     onChange={this.onNoteChange}
                 >
                 </textarea>
                     <div>
-                        <button className="button"> Add expense </button>
+                        <button className="button"> Legg til</button>
                     </div>
                 </form>
         )
