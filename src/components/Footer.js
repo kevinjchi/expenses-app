@@ -9,7 +9,7 @@ const Footer = () => (
             
             <h3 className="footer__title">Made by {"Kevin Jeu Chiem".toUpperCase()} 
             <p>
-            <FontAwesomeIcon icon="stroopwafel" />
+            <a href={"https://github.com/kevinjchi/"}> <FontAwesomeIcon icon="stroopwafel" /> </a>
             </p></h3>
             </div>
     </footer>
