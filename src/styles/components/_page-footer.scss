@@ -1,0 +1,28 @@
+
+.footer {
+    background: $off-black;
+    h1 {
+        color: $off-white;
+        font-family: "Lucida Sans Unicode";
+    }
+}
+
+.footer__content {
+   flex: 1 0 auto;
+   padding: 0;
+   width: 100%;
+}
+
+.footer__title {
+    color: white;
+    text-decoration: none;
+    align-content: center;
+    text-align: center;
+    padding: 10px;
+    h3 {
+        align-content: center;
+
+        text-align: center;
+        margin: 0px;
+    }
+}
