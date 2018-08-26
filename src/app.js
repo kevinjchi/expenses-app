@@ -10,6 +10,11 @@ import 'normalize.css/normalize.css';
 import './styles/styles.scss';
 import 'react-dates/lib/css/_datepicker.css';
 import './firebase/firebase';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStroopwafel } from '@fortawesome/free-solid-svg-icons';
+
+library.add(faStroopwafel);
 
 const store = configureStore();
 // store.dispatch(addExpense({description: 'water bill', amount: 500}));
