@@ -14,7 +14,7 @@ const SET_EXPENSES = 'SET_EXPENSES';
 
 //  ADD_EXPENSE
 export const addExpense = (expense) => ({
-    type: ADD_EXPENSES,
+    type: ADD_EXPENSE,
     expense
 });
 
