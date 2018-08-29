@@ -7,10 +7,14 @@ import database from '../firebase/firebase';
 // action generator returns function
 // component dispatched function () 
 // function runs (has the ability to dispatch other actions and do what it wants)
+const ADD_EXPENSE = 'ADD_EXPENSE';
+const REMOVE_EXPENSE = 'REMOVE_EXPENSE';
+const EDIT_EXPENSE = 'EDIT_EXPENSE';
+const SET_EXPENSES = 'SET_EXPENSES';
 
 //  ADD_EXPENSE
 export const addExpense = (expense) => ({
-    type: 'ADD_EXPENSE',
+    type: ADD_EXPENSES,
     expense
 });
 
@@ -38,7 +42,7 @@ export const startAddExpense = (expenseData = {}) => {
 
 // REMOVE_EXPENSE
 export const removeExpense = ({ id } = {}) => ({
-    type: 'REMOVE_EXPENSE',
+    type: REMOVE_EXPENSE,
     id    
 });
 
@@ -52,7 +56,7 @@ export const startRemoveExpense = ({id} = {}) => {
 
 // EDIT_EXPENSE
 export const editExpense = (id, updates) => ({
-    type: 'EDIT_EXPENSE',
+    type: EDIT_EXPENSE,
     id,
     updates
 });
@@ -68,7 +72,7 @@ export const startEditExpense = (id, updates) => {
 
 // SET_EXPENSES
 export const setExpenses = (expenses) => ({
-    type: 'SET_EXPENSES',
+    type: SET_EXPENSES,
     expenses
   });
   
