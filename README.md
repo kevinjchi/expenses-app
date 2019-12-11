@@ -3,7 +3,7 @@
 An expense app made using the framework React, Redux. Using firebase.
 
 ### ||||||||||||||||||||||||
-### LEGGER TIL ENDRING I FIL 
+### LEGGER TIL ENDRING I FIL1 
 ### ||||||||||||||||||||||||
 
 
