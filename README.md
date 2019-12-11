@@ -20,3 +20,5 @@ An expense app made using the framework React, Redux. Using firebase.
 
 Author:
 Kevin Jeu Chiem
+
+Midlertidlig endring
