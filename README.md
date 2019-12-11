@@ -2,6 +2,11 @@
 
 An expense app made using the framework React, Redux. Using firebase.
 
+### ||||||||||||||||||||||||
+### LEGGER TIL ENDRING I FIL 
+### ||||||||||||||||||||||||
+
+
 ### TODO:
 - [x] Outline
 - [x] Setup folder structure
